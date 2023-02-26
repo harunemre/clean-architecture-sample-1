@@ -3,14 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 using CleanArchitectureSample1.Domain.Common.Errors;
 using MediatR;
 using CleanArchitectureSample1.Application.Authentication.Commands.Register;
-using CleanArchitectureSample1.Application.Authentication.Common;
 using CleanArchitectureSample1.Application.Authentication.Queries.Login;
 using MapsterMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CleanArchitectureSample1.Api.Controllers;
 
 
 [Route("auth")]
+[AllowAnonymous]
 public class AuthenticationController : ApiController
 {
 
