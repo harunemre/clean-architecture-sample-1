@@ -1,14 +1,13 @@
+using CleanArchitectureSample1.Api;
 using CleanArchitectureSample1.Application;
 using CleanArchitectureSample1.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services
-    .AddApplication()
-    .AddInfrastructure(builder.Configuration);
-    
-    builder.Services.AddControllers();
-
+        .AddPresentation()
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration);
 }
 
 var app = builder.Build();
